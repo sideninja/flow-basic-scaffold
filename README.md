@@ -89,9 +89,9 @@ _folder structure_
         Foo.cdc
 ```
 
-You can then import the `Foo` contract in `Bar` contract like so:
+You can then import the `Foo` contract in `Bar` contract the same way as any other contract:
 ```
-import Foo from "charlie"
+import Foo
 ```
 
 
