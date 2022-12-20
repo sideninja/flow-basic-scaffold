@@ -10,7 +10,7 @@
     <a href="https://docs.onflow.org/flow-cli/install/"><strong>Read on docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/onflow/flow-cli/issues">Development Guidelines</a>
+    <a href="https://developers.flow.com/cadence/style-guide/project-development-tips">Project Guidelines</a>
     ·
     <a href="https://github.com/onflow/flow-cli/blob/master/CONTRIBUTING.md">Contribute</a>
   </p>
@@ -143,3 +143,9 @@ Looks like you are missing some of the accounts on the TESTNET:
   |- Loo contracts/charlie/Loo.cdc
 
 ```
+
+### Further Reading
+
+- Cadence Language Reference https://developers.flow.com/cadence/language
+- Flow Smart Contract Project Development Standards https://developers.flow.com/cadence/style-guide/project-development-tips
+- Cadence anti-patterns https://developers.flow.com/cadence/anti-patterns
