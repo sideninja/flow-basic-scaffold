@@ -11,12 +11,16 @@ Getting started can feel overwhelming, but we are here for you. Depending on how
 
 ### 📦 Project Structure
 Your project comes with some standard folders which have a special purpose:
+- `/cadence` inside here is where your Cadence smart contracts code lives
+- `/web` put your web client if needed inside this folder, remove if not needed
+- `/api` put your backend code if needed inside this folder, remove if not needed
+- `flow.json` configuration file for your project, you can think of it as package.json, but you don't need to worry, flow dev command will configure it for you
 
+Inside `cadence` folder you will find:
 - `/contracts` location for Cadence contracts go in this folder
 - `/scripts` location for Cadence scripts goes here
 - `/transactions` location for Cadence transactions goes in this folder
-- `/tests` all the integration tests for your dapp and Cadence tests go into this folder.
-- `flow.json` configuration file for your project, you can think of it as package.json, but you don't need to worry, flow dev command will configure it for you
+- `/tests` all the integration tests for your dapp and Cadence tests go into this folder
 
 
 ### 👨‍💻 Start Developing
