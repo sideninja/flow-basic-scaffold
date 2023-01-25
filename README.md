@@ -27,6 +27,7 @@ After creating the project using the `flow setup` you should then start the emul
 After the command is started it will automatically watch any changes you make to Cadence files and make sure to continiously sync those changes on the emulator network. If you make any mistakes it will report the errors as well. Read more [about the command here](https://developers.flow.com/tools/flow-cli/super-commands)
 
 **Importing Contracts**
+
 When you want to import the contracts you've just created you can simply do so by writing the import statement:
 ```
 import "Foo"
@@ -34,6 +35,7 @@ import "Foo"
 We will automatically find your project contract named `Foo` and handle the importing for you. 
 
 **Deploying to specific accounts**
+
 By default all contracts are deployed to a default account. If you want to seperate contracts to different accounts you can easily do so by creating a folder inside the contracts folder and we will create the account for you which will have the same name as the folder you just created. All the contracts inside that folder will be deployed automatically to the newly created account.
 
 Example deploying to charlie account:
