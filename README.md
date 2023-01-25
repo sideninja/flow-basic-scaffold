@@ -1,81 +1,35 @@
-<br />
-<p align="center">
-  <a href="https://docs.onflow.org/flow-cli/install/">
-    <img src="https://raw.githubusercontent.com/onflow/flow-cli/tmp/cli-dev/quick.svg" alt="Logo" width="470" height="auto">
-  </a>
-
-  <p align="center">
-    <i>Flow Quickstart will help you develop your first project without breaking a sweat.</i>
-    <br />
-    <a href="https://docs.onflow.org/flow-cli/install/"><strong>Read on docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://developers.flow.com/cadence/style-guide/project-development-tips">Project Guidelines</a>
-    ·
-    <a href="https://github.com/onflow/flow-cli/blob/master/CONTRIBUTING.md">Contribute</a>
-  </p>
-</p>
-<br />
-<br />
-
 ### 👋 Welcome Flow Developer!
-You've come to the right place. We will help you develop your first Flow application.
+Welcome to your new Flow project. We've created the basic folder structure you will need to develop your project and provided some examples of contracts and transactions you can modify. We've also added some of the most common contracts, transactions and scripts but feel free to just delete what you don't need. 
 
 ### 🔨 Getting started
-Start your new project simply by following these steps:
-1. run flow setup command `flow setup`,
-2. run flow development command `flow dev` and make sure you have emulator running (`flow emulator`),
-3. start writing your contracts, the dev command will make sure everything gets deployed.
-
-### 💿 Flow Setup
-Flow setup is the initial command you run to start your new Flow project.
-```shell
-> flow setup
-```
-The command will generate standard Flow proejct structure with the following resources:
-
-- **/contracts** all your contract source code goes in this folder, you can read more about Cadence contracts here.
-- **/scripts** all your scripts goes here, you can read more about Cadence scripts here.
-- **/transactions** all the transactions goes in this folder, you can read more about Cadence transactions here.
-- **/tests** all the integration tests for your dapp and Cadence tests go into this folder.
-- **flow.json** this is a configuration file for your project, but you don't need to worry about it, we will configure everything for you as you go.
+Getting started can feel overwhelming, but we are here for you. Depending on how accustomed you are to Flow here's a list of resources you might find useful:
+- **[Cadence documentation](https://developers.flow.com/cadence/language)**: here you will find language reference for Cadence, which will be the language in which you develop your smart contracts,
+- **[Visual Studio Code](https://code.visualstudio.com/?wt.mc_id=DX_841432)** and **[Cadence extension](https://marketplace.visualstudio.com/items?itemName=onflow.cadence)**: we suggest using Visual Studio Code IDE for writing Cadence with the Cadence extension installed, that will give you nice syntax highlitning and additional smart features,
+- **[SDKs](https://developers.flow.com/tools#sdks)**: here you will find a list of SDKs you can use to ease the interaction with Flow network (sending transactions, fetching accounts etc),
+- **[Tools](https://developers.flow.com/tools#development-tools)**: development tools you can use to make your development easier, [Flowser](https://docs.flowser.dev/) can be super handy to see what's going on the blockchain while you develop
 
 
-### 📦 Flow Develop
-After creating the project using the flow setup command you should then start the emulator and run the development command in the newly created project directory like so:
+### 📦 Project Structure
+Your project comes with some standard folders which have a special purpose:
+
+- `/contracts` location for Cadence contracts go in this folder
+- `/scripts` location for Cadence scripts goes here
+- `/transactions` location for Cadence transactions goes in this folder
+- `/tests` all the integration tests for your dapp and Cadence tests go into this folder.
+- `flow.json` configuration file for your project, you can think of it as package.json, but you don't need to worry, flow dev command will configure it for you
+
+
+### 👨‍💻 Start Developing
+After creating the project using the `flow setup` you should then start the emulator by running `flow emulator` and start the development command by running:
 ```shell
 > flow dev
 ```
-After the command is started it will automatically watch any changes you make to Cadence files and make sure to continiously sync those changes on the emulator network. If you make any mistakes it will report the errors as well.
-
-You should see something similar to:
-```shell
-Development environment activated, we will keep an eye on any new contracts
-you crate inside the contract folders and automatically deploy them for you.
-If you create a folder inside the contract folder we will automatically
-create an account with that name and deploy the contract in that account.
-
-
-[15:53:38] Syncing all the contracts...
-
-😎 bob
-  |- Test contracts/bob/test.cdc
-
-😜 charlie
-  |- Goo contracts/charlie/Goo.cdc
-  |- Loo contracts/charlie/Loo.cdc
-
-😏 emulator-account
-  |- Taa contracts/Taa.cdc
-  |- Koo contracts/Koo.cdc
-  |- Xoo contracts/Xoo.cdc
-  |- Moo contracts/Moo.cdc
-```
+After the command is started it will automatically watch any changes you make to Cadence files and make sure to continiously sync those changes on the emulator network. If you make any mistakes it will report the errors as well. Read more [about the command here](https://developers.flow.com/tools/flow-cli/super-commands)
 
 **Importing Contracts**
 When you want to import the contracts you've just created you can simply do so by writing the import statement:
 ```
-import Foo
+import "Foo"
 ```
 We will automatically find your project contract named `Foo` and handle the importing for you. 
 
@@ -94,55 +48,9 @@ _folder structure_
 
 You can then import the `Foo` contract in `Bar` contract the same way as any other contract:
 ```
-import Foo
+import "Foo"
 ```
 
-
-### 🚀 Flow Execute
-
-This command can be used to send transactions or scripts easily by using the following command:
-```shell
-flow exec sendToken
-```
-The command will automatically search for that file in scripts and contracts and will execute it for you.
-
-
-### 🎉 Flow Migrate WIP
-After you finish writing your project and you are ready to move on to testnet or mainnet we got you covered ther as well.
-
-You can easily migrate your just created project by running:
-
-```shell
-> flow migrate
-
-❓ Where do you want to migrate your project to?
- >  'TESTNET'  <
-    'MAINNET'  
-
-Looks like you are missing some of the accounts on the TESTNET:
-  - 'charlie'
-  - 'bob'
-
-❓ Do you want to create those accounts automatically?
- >  'YES'  <
-    'NO'
-
-❗ This command will perform the following:
- - Generate a new ECDSA P-256 public and private key pair.
- - Create a new account on Local Emulator paired with the public key.
- - Save the newly-created account to flow.json and the keys to keys.json.
-
-
-✨  Project successfully migrated to 'TESTNET'
-
-😎 bob (0xf8d6e0586b0a20c7)
-  |- Test contracts/bob/test.cdc
-
-😏 charlie (0xb446e0586b0a20133)
-  |- Goo contracts/charlie/Goo.cdc
-  |- Loo contracts/charlie/Loo.cdc
-
-```
 
 ### Further Reading
 
