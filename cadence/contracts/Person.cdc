@@ -1,9 +1,9 @@
 import "DogShelter"
 
 // A simple Person contract 
- // 
- // reference: https://developers.flow.com/cadence/language/contracts
- pub contract Person {
+// 
+// reference: https://developers.flow.com/cadence/language/contracts
+pub contract Person {
     // declaration of a public variable
     pub var name: String
     pub var dog: @DogShelter.Dog
@@ -17,7 +17,7 @@ import "DogShelter"
     pub fun sayHello(): String {
         return "Hello, my name is ".concat(self.name)
     }
-    
+
     // create a new friendship resource 
     pub fun makeFriends(): @Friendship {
         return <-create Friendship()
