@@ -1,4 +1,4 @@
-import "DogShelter"
+
 
 // A simple Person contract 
 // 
@@ -6,12 +6,12 @@ import "DogShelter"
 pub contract Person {
     // declaration of a public variable
     pub var name: String
-    pub var dog: @DogShelter.Dog
+
 
     // initialization method for our contracts, this gets run on deployment
     init() {
         self.name = "Alice"
-        self.dog <- DogShelter.addoptDog(name: "Fifi")
+
     }
 
     pub fun sayHello(): String {
