@@ -64,6 +64,7 @@ import "Foo"
 ```
 
 **Included Imports**
+
 You can already import certain common contracts we included for you, just make sure you started your emulator with the `--contracts` flag so those contracts are really deployed. The list of contracts you can import out of the box is:
 - NonFungibleToken `import "NonFungibleToken"`
 - FlowToken `import "FlowToken"`
