@@ -24,7 +24,13 @@ Inside `cadence` folder you will find:
 
 
 ### 👨‍💻 Start Developing
-After creating the project using the `flow setup` you should then start the emulator by running `flow emulator` and start the development command by running:
+After creating this project using the flow setup command you should then start the emulator by running:
+```
+> flow emulator --contracts
+```
+_we use `--contracts` flag to include more already deployed contract we can then easily import in our project._
+
+and then start the development command by running:
 ```shell
 > flow dev
 ```
