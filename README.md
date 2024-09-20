@@ -36,7 +36,7 @@ and then start the development command by running:
 ```
 After the command is started it will automatically watch any changes you make to Cadence files and make sure to continiously sync those changes on the emulator network. If you make any mistakes it will report the errors as well. Read more [about the command here](https://developers.flow.com/tools/flow-cli/super-commands)
 
-**Importing Contracts**
+#### Importing Contracts
 
 When you want to import the contracts you've just created you can simply do so by writing the import statement:
 ```
@@ -44,7 +44,7 @@ import "Foo"
 ```
 We will automatically find your project contract named `Foo` and handle the importing for you. 
 
-**Deploying to specific accounts**
+#### Deploying to specific accounts
 
 By default all contracts are deployed to a default account. If you want to seperate contracts to different accounts you can easily do so by creating a folder inside the contracts folder and we will create the account for you which will have the same name as the folder you just created. All the contracts inside that folder will be deployed automatically to the newly created account.
 
@@ -63,18 +63,11 @@ You can then import the `Foo` contract in `Bar` contract the same way as any oth
 import "Foo"
 ```
 
-**Included Imports**
+#### Using external dependencies
 
-You can already import certain common contracts we included for you, just make sure you started your emulator with the `--contracts` flag so those contracts are really deployed. The list of contracts you can import out of the box is:
-- NonFungibleToken `import "NonFungibleToken"`
-- FlowToken `import "FlowToken"`
-- FungibleToken `import "FungibleToken"`
-- FUSD `import "FUSD"`
-- MetadataViews `import "MetadataViews"`
-- ExampleNFT `import "ExampleNFT"`
-- NFTStorefrontV2 `import "NFTStorefrontV2"`
-- NFTStorefront `import "NFTStorefront"`
+If you want to use external contract dependencies (like NonFungibleToken, FlowToken, FungibleToken.) you can install them using the [Cadence dependency manager](https://developers.flow.com/tools/flow-cli/dependency-manager).
 
+Use [ContractBrowser](https://contractbrowser.com/) to explore available 3rd party contracts in the Flow ecosystem.
 
 ### Further Reading
 

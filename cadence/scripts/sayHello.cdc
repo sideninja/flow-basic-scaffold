@@ -1,6 +1,6 @@
 import "Person"
 
-pub fun main(): String {
+access(all) fun main(): String {
     return Person.sayHello()
 }
  
